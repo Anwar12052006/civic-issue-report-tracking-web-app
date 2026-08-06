@@ -11,14 +11,14 @@ const SocialLogin = ({ action = "Sign in" }) => {
   return (
     <>
       {/* Divider */}
-      <div className="my-6 flex items-center gap-4">
+      <div className="my-3 lg:my-4 flex items-center gap-4">
         <div className="flex-1 h-px bg-gray-200"></div>
-        <span className="text-sm text-gray-400">or</span>
+        <span className="text-xs sm:text-sm text-gray-400">or</span>
         <div className="flex-1 h-px bg-gray-200"></div>
       </div>
 
       {/* Social Login Button */}
-      <button className="w-full flex items-center justify-center gap-3 border border-gray-200 py-3 rounded-xl font-medium text-gray-700 hover:bg-gray-50 transition-colors">
+      <button className="w-full flex items-center justify-center gap-3 border border-gray-200 py-2 sm:py-2.5 rounded-xl font-medium text-xs sm:text-sm text-gray-700 hover:bg-gray-50 transition-colors">
         <GoogleIcon />
         {action} with Google
       </button>

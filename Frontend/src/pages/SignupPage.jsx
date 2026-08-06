@@ -151,17 +151,17 @@ const SignupPage = () => {
         >
           {/* Error Message */}
           {error && (
-            <div className="mb-5 p-4 bg-red-50 border border-red-200 rounded-xl text-red-600 text-sm animate-fade-in-down">
+            <div className="mb-3 p-3 bg-red-50 border border-red-200 rounded-xl text-red-600 text-xs sm:text-sm animate-fade-in-down">
               {error}
             </div>
           )}
 
           {/* FORM */}
-          <form className="space-y-4" onSubmit={handleSubmit}>
+          <form className="space-y-2.5 lg:space-y-3" onSubmit={handleSubmit}>
             {/* Name Row */}
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
               <div>
-                <label className="text-sm font-semibold text-gray-700 mb-1.5 block">Full Name</label>
+                <label className="text-xs sm:text-sm font-semibold text-gray-700 mb-1 block">Full Name</label>
                 <div className="relative">
                   <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                   <input
@@ -169,13 +169,13 @@ const SignupPage = () => {
                     placeholder="John Doe"
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
-                    className="w-full h-11 pl-10 pr-3 rounded-xl border border-gray-200 bg-gray-50 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+                    className="w-full h-9 lg:h-10 pl-9 sm:pl-10 pr-3 rounded-xl border border-gray-200 bg-gray-50 text-xs sm:text-sm focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
                     required
                   />
                 </div>
               </div>
               <div>
-                <label className="text-sm font-semibold text-gray-700 mb-1.5 block">Username</label>
+                <label className="text-xs sm:text-sm font-semibold text-gray-700 mb-1 block">Username</label>
                 <div className="relative">
                   <AtSign className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                   <input
@@ -183,7 +183,7 @@ const SignupPage = () => {
                     placeholder="johndoe"
                     value={userName}
                     onChange={(e) => setUserName(e.target.value)}
-                    className="w-full h-11 pl-10 pr-3 rounded-xl border border-gray-200 bg-gray-50 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+                    className="w-full h-9 lg:h-10 pl-9 sm:pl-10 pr-3 rounded-xl border border-gray-200 bg-gray-50 text-xs sm:text-sm focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
                     required
                   />
                 </div>
@@ -192,13 +192,13 @@ const SignupPage = () => {
 
             {/* Email */}
             <div>
-              <label className="text-sm font-semibold text-gray-700 mb-1.5 block">
+              <label className="text-xs sm:text-sm font-semibold text-gray-700 mb-1 block">
                 Email Address
                 {role === "Volunteer" && (
-                  <span className="ml-2 text-xs font-normal text-amber-600">(@v.com required)</span>
+                  <span className="ml-2 text-[11px] font-normal text-amber-600">(@v.com required)</span>
                 )}
                 {role === "Admin" && (
-                  <span className="ml-2 text-xs font-normal text-amber-600">(@a.gmail required)</span>
+                  <span className="ml-2 text-[11px] font-normal text-amber-600">(@a.gmail required)</span>
                 )}
               </label>
               <div className="relative">
@@ -214,7 +214,7 @@ const SignupPage = () => {
                   }
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className={`w-full h-11 pl-10 pr-3 rounded-xl border bg-gray-50 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all ${
+                  className={`w-full h-9 lg:h-10 pl-9 sm:pl-10 pr-3 rounded-xl border bg-gray-50 text-xs sm:text-sm focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all ${
                     (role === "Volunteer" && email && !email.toLowerCase().endsWith("@v.com")) ||
                     (role === "Admin" && email && !email.toLowerCase().endsWith("@a.gmail"))
                       ? "border-amber-400"
@@ -226,9 +226,9 @@ const SignupPage = () => {
             </div>
 
             {/* Phone & Role Row */}
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
               <div>
-                <label className="text-sm font-semibold text-gray-700 mb-1.5 block">Phone (optional)</label>
+                <label className="text-xs sm:text-sm font-semibold text-gray-700 mb-1 block">Phone (optional)</label>
                 <div className="relative">
                   <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                   <input
@@ -236,16 +236,16 @@ const SignupPage = () => {
                     placeholder="+91 xxxxxxxxxx"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="w-full h-11 pl-10 pr-3 rounded-xl border border-gray-200 bg-gray-50 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+                    className="w-full h-9 lg:h-10 pl-9 sm:pl-10 pr-3 rounded-xl border border-gray-200 bg-gray-50 text-xs sm:text-sm focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
                   />
                 </div>
               </div>
               <div>
-                <label className="text-sm font-semibold text-gray-700 mb-1.5 block">Role</label>
+                <label className="text-xs sm:text-sm font-semibold text-gray-700 mb-1 block">Role</label>
                 <div className="relative">
                   <Users className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                   <select
-                  value={role}
+                    value={role}
                     onChange={(e) => {
                       const selectedRole = e.target.value;
                       setRole(selectedRole);
@@ -254,56 +254,55 @@ const SignupPage = () => {
                         setLocation(null);
                       }
                     }}
-                    className="w-full h-11 pl-10 pr-3 rounded-xl border border-gray-200 bg-gray-50 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all appearance-none cursor-pointer"
+                    className="w-full h-9 lg:h-10 pl-9 sm:pl-10 pr-3 rounded-xl border border-gray-200 bg-gray-50 text-xs sm:text-sm focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all appearance-none cursor-pointer"
                   >
-
                     <option>User</option>
                     <option>Volunteer</option>
                     <option>Admin</option>
                   </select>
                 </div>
                 {role === "Volunteer" && !location && (
-               <p className="text-xs text-amber-600 mt-1">
-              Fetching your location, please allow GPS...
-                </p>
-              )}
+                  <p className="text-[11px] text-amber-600 mt-0.5">
+                    Fetching your location, please allow GPS...
+                  </p>
+                )}
               </div>
             </div>
 
-{role === "Volunteer" && (
-  <div className="mt-3">
-    <label className="text-sm font-semibold text-gray-700 mb-2 block">
-      Select Your Working Location
-    </label>
+            {role === "Volunteer" && (
+              <div className="mt-2">
+                <label className="text-xs sm:text-sm font-semibold text-gray-700 mb-1 block">
+                  Select Your Working Location
+                </label>
 
-    <LocationMap
-      position={
-        location
-          ? {
-              lat: location.coordinates[1],
-              lng: location.coordinates[0],
-            }
-          : null
-      }
-      setPosition={(pos) =>
-        setLocation({
-          type: "Point",
-          coordinates: [pos.lng, pos.lat],
-        })
-      }
-    />
+                <LocationMap
+                  position={
+                    location
+                      ? {
+                          lat: location.coordinates[1],
+                          lng: location.coordinates[0],
+                        }
+                      : null
+                  }
+                  setPosition={(pos) =>
+                    setLocation({
+                      type: "Point",
+                      coordinates: [pos.lng, pos.lat],
+                    })
+                  }
+                />
 
-    {!location && (
-      <p className="text-xs text-amber-600 mt-1">
-        Please select your working area on the map
-      </p>
-    )}
-  </div>
-)}
+                {!location && (
+                  <p className="text-[11px] text-amber-600 mt-0.5">
+                    Please select your working area on the map
+                  </p>
+                )}
+              </div>
+            )}
 
             {/* Password */}
             <div>
-              <label className="text-sm font-semibold text-gray-700 mb-1.5 block">Password</label>
+              <label className="text-xs sm:text-sm font-semibold text-gray-700 mb-1 block">Password</label>
               <div className="relative">
                 <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                 <input
@@ -311,7 +310,7 @@ const SignupPage = () => {
                   placeholder="Create a strong password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full h-11 pl-10 pr-12 rounded-xl border border-gray-200 bg-gray-50 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+                  className="w-full h-9 lg:h-10 pl-9 sm:pl-10 pr-10 rounded-xl border border-gray-200 bg-gray-50 text-xs sm:text-sm focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
                   required
                 />
                 <button
@@ -325,14 +324,14 @@ const SignupPage = () => {
             </div>
 
             {/* Terms */}
-            <div className="flex items-start gap-3 pt-1">
+            <div className="flex items-start gap-2.5 pt-0.5">
               <input
                 type="checkbox"
                 checked={agreeTerms}
                 onChange={(e) => setAgreeTerms(e.target.checked)}
-                className="mt-0.5 w-4 h-4 rounded border-gray-300 text-emerald-500 focus:ring-emerald-500 cursor-pointer"
+                className="mt-0.5 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded border-gray-300 text-emerald-500 focus:ring-emerald-500 cursor-pointer"
               />
-              <span className="text-xs text-gray-600 leading-relaxed">
+              <span className="text-[11px] sm:text-xs text-gray-600 leading-relaxed">
                 I agree to CleanStreet's{" "}
                 <button type="button" className="font-semibold text-emerald-600 hover:text-emerald-700">Terms of Service</button>{" "}
                 and{" "}
@@ -340,21 +339,20 @@ const SignupPage = () => {
               </span>
             </div>
 
-
-  <button
-  type="submit"
-  disabled={
-    isLoading ||
-    (role === "Volunteer" && !location)
-  }
-  className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white py-3.5 rounded-xl font-semibold shadow-lg shadow-emerald-200 hover:shadow-xl hover:shadow-emerald-300 transition-all btn-press disabled:opacity-50 disabled:cursor-not-allowed mt-2"
->
+            <button
+              type="submit"
+              disabled={
+                isLoading ||
+                (role === "Volunteer" && !location)
+              }
+              className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 text-white py-2.5 lg:py-3 rounded-xl font-semibold text-xs sm:text-sm shadow-lg shadow-emerald-200 hover:shadow-xl hover:shadow-emerald-300 transition-all btn-press disabled:opacity-50 disabled:cursor-not-allowed mt-1.5"
+            >
               {isLoading ? (
-                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
               ) : (
                 <>
                   Create Account
-                  <ArrowRight className="w-5 h-5" />
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
                 </>
               )}
             </button>
@@ -364,7 +362,7 @@ const SignupPage = () => {
           <SocialLogin action="Sign up" />
 
           {/* Login Link */}
-          <p className="mt-5 text-center text-sm text-gray-500">
+          <p className="mt-3 lg:mt-4 text-center text-xs sm:text-sm text-gray-500">
             Already have an account?{" "}
             <Link to="/login" className="font-semibold text-emerald-600 hover:text-emerald-700 transition-colors">
               Sign In
