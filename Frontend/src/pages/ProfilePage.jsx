@@ -29,7 +29,7 @@ import { Header, PageWrapper } from "../components/layout";
 import { Loader, Card } from "../components/common";
 
 // Constants
-import { IMAGEKIT_PUBLIC_KEY } from "../constants";
+import { IMAGEKIT_PUBLIC_KEY, API_BASE_URL } from "../constants";
 
 export default function ProfilePage() {
   const navigate = useNavigate();
@@ -70,7 +70,7 @@ export default function ProfilePage() {
     const fetchProfile = async () => {
       const token = localStorage.getItem("token");
       try {
-        const res = await fetch("http://localhost:5000/api/profile", {
+        const res = await fetch(`${API_BASE_URL}/profile`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         const data = await res.json();
@@ -100,7 +100,7 @@ export default function ProfilePage() {
     setIsSaving(true);
     const token = localStorage.getItem("token");
     try {
-      const res = await fetch("http://localhost:5000/api/profile", {
+      const res = await fetch(`${API_BASE_URL}/profile`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -148,7 +148,7 @@ export default function ProfilePage() {
 
     try {
       // Get authentication parameters from backend
-      const authRes = await fetch("http://localhost:5000/api/upload/auth");
+      const authRes = await fetch(`${API_BASE_URL}/imagekit/auth`);
       const authData = await authRes.json();
 
       // Create form data for ImageKit upload

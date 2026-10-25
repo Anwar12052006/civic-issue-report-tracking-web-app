@@ -10,6 +10,9 @@ import { AuthLayout, AuthFormCard, SocialLogin } from "../components/features/au
 import bgImage from "../assets/bg-signin.jpg";
 import LocationMap from "../components/features/report/LocationMap";
 
+// Constants
+import { API_BASE_URL } from "../constants";
+
 
 const SignupPage = () => {
   const navigate = useNavigate();
@@ -77,7 +80,7 @@ const SignupPage = () => {
     };
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/register", {
+      const res = await fetch(`${API_BASE_URL}/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(userData),

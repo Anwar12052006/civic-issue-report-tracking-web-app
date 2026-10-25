@@ -1,4 +1,6 @@
-const API_URL = "http://localhost:5000/api/admin";
+import { API_BASE_URL } from "../constants";
+
+const API_URL = `${API_BASE_URL}/admin`;
 
 export const getAllUsers = async () => {
   const token = localStorage.getItem("token");

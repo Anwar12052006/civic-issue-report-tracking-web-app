@@ -20,6 +20,7 @@ import {
 
 // Services
 import { issueService } from "../services/issueService";
+import { API_BASE_URL } from "../constants";
 
 
 export default function DashboardPage() {
@@ -66,7 +67,7 @@ export default function DashboardPage() {
 
       try {
         // Fetch user profile
-        const res = await fetch("http://localhost:5000/api/profile", {
+        const res = await fetch(`${API_BASE_URL}/profile`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

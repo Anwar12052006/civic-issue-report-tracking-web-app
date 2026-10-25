@@ -9,6 +9,9 @@ import { AuthLayout, AuthFormCard, SocialLogin } from "../components/features/au
 // Assets
 import bgImage from "../assets/bg-signin.jpg";
 
+// Constants
+import { API_BASE_URL } from "../constants";
+
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -34,7 +37,7 @@ const LoginPage = () => {
     const loginData = { email, password };
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/login", {
+      const res = await fetch(`${API_BASE_URL}/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(loginData),
@@ -53,7 +56,7 @@ const LoginPage = () => {
       localStorage.setItem("token", data.token);
 
       // Fetch complete user data from database
-      const profileRes = await fetch("http://localhost:5000/api/profile", {
+      const profileRes = await fetch(`${API_BASE_URL}/profile`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
