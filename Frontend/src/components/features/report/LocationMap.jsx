@@ -34,7 +34,7 @@ const LocationMap = ({ position, setPosition, center = [20.5937, 78.9629], zoom 
       <p className="text-sm text-gray-500 mb-3">Click on the map to mark the exact location of the issue</p>
 
       <div className="h-64 sm:h-72 md:h-80 w-full rounded-2xl overflow-hidden shadow-md border border-gray-200">
-        <MapContainer center={center} zoom={zoom} className="w-full h-full">
+        <MapContainer center={center} zoom={zoom} scrollWheelZoom={false} className="w-full h-full">
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

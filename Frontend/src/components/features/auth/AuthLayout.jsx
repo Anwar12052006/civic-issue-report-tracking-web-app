@@ -88,8 +88,8 @@ const AuthLayout = ({
         </div>
 
         {/* RIGHT SIDE (FORM) */}
-        <div className="flex w-full lg:w-[480px] xl:w-[520px] flex-col items-center justify-center px-4 py-4 lg:py-6 animate-fade-in-right overflow-y-auto lg:overflow-y-visible">
-          <div className="w-full max-w-md">
+        <div className="flex w-full lg:w-[480px] xl:w-[520px] flex-col items-center px-4 py-4 lg:py-6 animate-fade-in-right overflow-y-auto h-full max-h-screen">
+          <div className="w-full max-w-md my-auto pb-16 pt-2">
             {/* Mobile Logo */}
             <div className="lg:hidden flex items-center justify-center gap-2 mb-6">
               <img src={logo} alt="logo" className="w-9 h-9" />
@@ -101,7 +101,7 @@ const AuthLayout = ({
         </div>
 
         {/* FOOTER */}
-        <div className="absolute bottom-2 lg:bottom-3 left-1/2 -translate-x-1/2 text-center z-20 w-full px-4">
+        <div className="absolute bottom-2 lg:bottom-3 left-1/2 -translate-x-1/2 text-center z-20 w-full px-4 pointer-events-none">
           <p className="text-[11px] text-emerald-300/70">
             © 2025 CleanStreet. Making communities cleaner, one report at a time.
           </p>
